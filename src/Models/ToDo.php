@@ -12,6 +12,7 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Model;
  * @property int     $userId
  * @property boolean $isDone
  * @property int     $createdAt
+ * @property date    $dateAt
  */
 class ToDo extends Model
 {
@@ -23,6 +24,7 @@ class ToDo extends Model
     public $userId          = 0;
     public $isDone          = false;
     public $createdAt       = 0;
+    public $dateAt          = '0000-00-00';
 
     /**
      * @return string

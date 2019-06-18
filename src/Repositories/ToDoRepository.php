@@ -62,6 +62,8 @@ class ToDoRepository implements ToDoRepositoryContract
 
         $toDo->createdAt = time();
 
+        $toDo->dateAt = date("Y-m-d");
+
         $database->save($toDo);
 
         return $toDo;
