@@ -2,7 +2,7 @@
 
 namespace ToDoList\Migrations;
 
-use ToDoList\Models\ToDo;
+use ToDoList\Models\ToDoTest;
 use Plenty\Modules\Plugin\DataBase\Contracts\Migrate;
 
 /**
@@ -15,6 +15,6 @@ class CreateToDoTable
      */
     public function run(Migrate $migrate)
     {
-        $migrate->createTable(ToDo::class);
+        $migrate->createTable(ToDoTest::class);
     }
 }

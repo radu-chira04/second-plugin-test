@@ -13,7 +13,7 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Model;
  * @property boolean $isDone
  * @property int     $createdAt
  */
-class ToDo extends Model
+class ToDoTest extends Model
 {
     /**
      * @var int
@@ -29,6 +29,6 @@ class ToDo extends Model
      */
     public function getTableName(): string
     {
-        return 'ToDoList::ToDo';
+        return 'ToDoList::ToDoTest';
     }
 }
