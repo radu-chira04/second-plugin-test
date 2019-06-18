@@ -58,7 +58,7 @@ class ToDoRepository implements ToDoRepositoryContract
 
         $toDo->taskDescription = $data['taskDescription'];
 
-        $toDo->userId = $this->getCurrentContactId();
+        $toDo->userId = '739';// $this->getCurrentContactId()
 
         $toDo->createdAt = time();
 
