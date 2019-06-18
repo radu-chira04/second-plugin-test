@@ -81,12 +81,16 @@ class ToDoRepository implements ToDoRepositoryContract
         $database = pluginApp(DataBase::class);
 
         $id = $this->getCurrentContactId();
+
         /**
          * @var ToDo[] $toDoList
          */
-        $toDoList = $database->query(ToDo::class)->where('dateAt', '=', date('Y-m-d'))
+        $toDoList = $database->query(ToDo::class)
+            ->where('dateAt', '=', date('Y-m-d'))
+            ->where('userId', '=', $id)
             ->orderBy('id', 'desc')
             ->get();
+
         return $toDoList;
     }
 
