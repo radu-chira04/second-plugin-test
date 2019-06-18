@@ -10,6 +10,7 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Model;
  * @property int     $id
  * @property string  $taskDescription
  * @property int     $userId
+ * @property string  $userName
  * @property boolean $isDone
  * @property int     $createdAt
  * @property date    $dateAt
@@ -22,9 +23,10 @@ class ToDo extends Model
     public $id              = 0;
     public $taskDescription = '';
     public $userId          = 0;
+    public $userName        = '';
     public $isDone          = false;
     public $createdAt       = 0;
-    public $dateAt          = '0000-00-00';
+    public $dateAt          = 0000-00-00;
 
     /**
      * @return string

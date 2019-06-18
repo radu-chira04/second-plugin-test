@@ -60,6 +60,8 @@ class ToDoRepository implements ToDoRepositoryContract
 
         $toDo->userId = '739';// $this->getCurrentContactId()
 
+        $toDo->userName = 'testuser';
+
         $toDo->createdAt = time();
 
         $toDo->dateAt = date("Y-m-d");
