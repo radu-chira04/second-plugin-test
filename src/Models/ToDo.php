@@ -26,7 +26,7 @@ class ToDo extends Model
     public $userName        = '';
     public $isDone          = false;
     public $createdAt       = 0;
-    public $dateAt          = 0000-00-00;
+    public $dateAt          = '0000-00-00';
 
     /**
      * @return string
