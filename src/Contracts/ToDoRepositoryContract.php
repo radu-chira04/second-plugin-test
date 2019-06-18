@@ -2,7 +2,7 @@
 
 namespace ToDoList\Contracts;
 
-use ToDoList\Models\ToDoTest;
+use ToDoList\Models\ToDo;
 
 /**
  * Class ToDoRepositoryContract
@@ -14,14 +14,14 @@ interface ToDoRepositoryContract
      * Add a new task to the To Do list
      *
      * @param array $data
-     * @return ToDoTest
+     * @return ToDo
      */
-    public function createTask(array $data): ToDoTest;
+    public function createTask(array $data): ToDo;
 
     /**
      * List all tasks of the To Do list
      *
-     * @return ToDoTest[]
+     * @return ToDo[]
      */
     public function getToDoList(): array;
 
@@ -29,15 +29,15 @@ interface ToDoRepositoryContract
      * Update the status of the task
      *
      * @param int $id
-     * @return ToDoTest
+     * @return ToDo
      */
-    public function updateTask($id): ToDoTest;
+    public function updateTask($id): ToDo;
 
     /**
      * Delete a task from the To Do list
      *
      * @param int $id
-     * @return ToDoTest
+     * @return ToDo
      */
-    public function deleteTask($id): ToDoTest;
+    public function deleteTask($id): ToDo;
 }

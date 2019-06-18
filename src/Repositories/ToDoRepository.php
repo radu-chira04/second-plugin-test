@@ -5,7 +5,7 @@ namespace ToDoList\Repositories;
 use Plenty\Exceptions\ValidationException;
 use Plenty\Modules\Plugin\DataBase\Contracts\DataBase;
 use ToDoList\Contracts\ToDoRepositoryContract;
-use ToDoList\Models\ToDoTest;
+use ToDoList\Models\ToDo;
 use ToDoList\Validators\ToDoValidator;
 use Plenty\Modules\Frontend\Services\AccountService;
 
@@ -38,10 +38,10 @@ class ToDoRepository implements ToDoRepositoryContract
      * Add a new item to the To Do list
      *
      * @param array $data
-     * @return ToDoTest
+     * @return ToDo
      * @throws ValidationException
      */
-    public function createTask(array $data): ToDoTest
+    public function createTask(array $data): ToDo
     {
         try {
             ToDoValidator::validateOrFail($data);
@@ -54,7 +54,7 @@ class ToDoRepository implements ToDoRepositoryContract
          */
         $database = pluginApp(DataBase::class);
 
-        $toDo = pluginApp(ToDoTest::class);
+        $toDo = pluginApp(ToDo::class);
 
         $toDo->taskDescription = $data['taskDescription'];
 
@@ -70,7 +70,7 @@ class ToDoRepository implements ToDoRepositoryContract
     /**
      * List all items of the To Do list
      *
-     * @return ToDoTest[]
+     * @return ToDo[]
      */
     public function getToDoList(): array
     {
@@ -78,9 +78,9 @@ class ToDoRepository implements ToDoRepositoryContract
 
         $id = $this->getCurrentContactId();
         /**
-         * @var ToDoTest[] $toDoList
+         * @var ToDo[] $toDoList
          */
-        $toDoList = $database->query(ToDoTest::class)->where('userId', '=', $id)->get();
+        $toDoList = $database->query(ToDo::class)->where('userId', '=', $id)->get();
         return $toDoList;
     }
 
@@ -88,16 +88,16 @@ class ToDoRepository implements ToDoRepositoryContract
      * Update the status of the item
      *
      * @param int $id
-     * @return ToDoTest
+     * @return ToDo
      */
-    public function updateTask($id): ToDoTest
+    public function updateTask($id): ToDo
     {
         /**
          * @var DataBase $database
          */
         $database = pluginApp(DataBase::class);
 
-        $toDoList = $database->query(ToDoTest::class)
+        $toDoList = $database->query(ToDo::class)
             ->where('id', '=', $id)
             ->get();
 
@@ -112,16 +112,16 @@ class ToDoRepository implements ToDoRepositoryContract
      * Delete an item from the To Do list
      *
      * @param int $id
-     * @return ToDoTest
+     * @return ToDo
      */
-    public function deleteTask($id): ToDoTest
+    public function deleteTask($id): ToDo
     {
         /**
          * @var DataBase $database
          */
         $database = pluginApp(DataBase::class);
 
-        $toDoList = $database->query(ToDoTest::class)
+        $toDoList = $database->query(ToDo::class)
             ->where('id', '=', $id)
             ->get();
 
