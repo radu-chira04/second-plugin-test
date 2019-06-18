@@ -84,7 +84,10 @@ class ToDoRepository implements ToDoRepositoryContract
         /**
          * @var ToDo[] $toDoList
          */
-        $toDoList = $database->query(ToDo::class)->where('userId', '=', $id)->get();
+        $toDoList = $database->query(ToDo::class)->where('dateAt', '=', date('Y-m-d'))
+            ->orderBy('id', 'desc')
+            ->take(5)
+            ->get();
         return $toDoList;
     }
 
