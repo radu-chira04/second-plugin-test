@@ -14,7 +14,7 @@ use ToDoList\Contracts\ToDoRepositoryContract;
 class ContentController extends Controller
 {
     /**
-     * @param Twig                   $twig
+     * @param Twig $twig
      * @param ToDoRepositoryContract $toDoRepo
      * @return string
      */
@@ -26,8 +26,8 @@ class ContentController extends Controller
     }
 
     /**
-     * @param  \Plenty\Plugin\Http\Request $request
-     * @param ToDoRepositoryContract       $toDoRepo
+     * @param \Plenty\Plugin\Http\Request $request
+     * @param ToDoRepositoryContract $toDoRepo
      * @return string
      */
     public function createToDo(Request $request, ToDoRepositoryContract $toDoRepo): string
@@ -37,7 +37,7 @@ class ContentController extends Controller
     }
 
     /**
-     * @param int                    $id
+     * @param int $id
      * @param ToDoRepositoryContract $toDoRepo
      * @return string
      */
@@ -48,7 +48,7 @@ class ContentController extends Controller
     }
 
     /**
-     * @param int                    $id
+     * @param int $id
      * @param ToDoRepositoryContract $toDoRepo
      * @return string
      */
