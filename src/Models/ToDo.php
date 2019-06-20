@@ -13,7 +13,7 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Model;
  * @property string  $userName
  * @property boolean $isDone
  * @property int     $createdAt
- * @property date    $dateAt
+ * @property string  $dateAt
  */
 class ToDo extends Model
 {
