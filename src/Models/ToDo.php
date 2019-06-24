@@ -21,11 +21,35 @@ class ToDo extends Model
      * @var int
      */
     public $id = 0;
+
+    /**
+     * @var string
+     */
     public $taskDescription = '';
+
+    /**
+     * @var int
+     */
     public $userId = 0;
+
+    /**
+     * @var string
+     */
     public $userName = '';
+
+    /**
+     * @var bool
+     */
     public $isDone = false;
+
+    /**
+     * @var int
+     */
     public $createdAt = 0;
+
+    /**
+     * @var string
+     */
     public $dateAt = '0000-00-00';
 
     /**
